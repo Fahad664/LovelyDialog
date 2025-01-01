@@ -1,17 +1,22 @@
 apply plugin: 'com.android.library'
 //apply plugin: 'maven-publish'
-//apply plugin: 'com.jfrog.bintray'
 
 android {
     namespace "com.yarolegovich.lovelydialog"
     compileSdk rootProject.compileSdk
-//    buildToolsVersion rootProject.buildToolsVersion
 
     defaultConfig {
         minSdkVersion 26
         targetSdkVersion rootProject.targetSdkVersion
         versionCode 1
         versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
     }
 }
 
@@ -26,28 +31,9 @@ dependencies {
 //        publications {
 //            LibRelease(MavenPublication) {
 //                from components.release
-//                artifactId 'lovely-dialog'
-//                groupId upload.groupId
-//                version upload.version
-//            }
-//        }
-//    }
-//
-//    bintray {
-//        user = upload.user
-//        key = System.getenv('BINTRAY_KEY')
-//        publications = ['LibRelease']
-//        configurations = ['archives']
-//        pkg {
-//            name = upload.uploadName
-//            repo = upload.repository
-//            userOrg = upload.userOrg
-//            licenses = upload.licences
-//            publish = true
-//            dryRun = false
-//            version {
-//                name = upload.version
-//                desc = upload.description
+//                artifactId = 'LovelyDialog'
+//                groupId = upload.groupId
+//                version = upload.version
 //            }
 //        }
 //    }

@@ -3,7 +3,6 @@ apply plugin: 'com.android.application'
 android {
     namespace "com.yarolegovich.sample"
     compileSdk rootProject.compileSdk
-//    buildToolsVersion rootProject.buildToolsVersion
 
     defaultConfig {
         applicationId "com.yarolegovich.sample"
@@ -19,12 +18,9 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
-//    kotlinOptions {
-//        jvmTarget = "1.8"
-//    }
 
 }
 
@@ -33,5 +29,4 @@ dependencies {
     implementation deps.annotations
     implementation deps.androidxCompat
     implementation project(':library')
-//    implementation 'com.yarolegovich:lovely-dialog:1.1.1'
 }
