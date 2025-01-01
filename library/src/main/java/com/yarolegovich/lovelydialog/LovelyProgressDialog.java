@@ -1,6 +1,4 @@
 package com.yarolegovich.lovelydialog;
-
-import android.app.AlertDialog;
 import android.content.Context;
 
 /**

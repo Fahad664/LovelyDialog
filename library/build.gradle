@@ -1,13 +1,14 @@
 apply plugin: 'com.android.library'
-apply plugin: 'maven-publish'
-apply plugin: 'com.jfrog.bintray'
+//apply plugin: 'maven-publish'
+//apply plugin: 'com.jfrog.bintray'
 
 android {
-    compileSdkVersion rootProject.compileSdkVersion
-    buildToolsVersion rootProject.buildToolsVersion
+    namespace "com.yarolegovich.lovelydialog"
+    compileSdk rootProject.compileSdk
+//    buildToolsVersion rootProject.buildToolsVersion
 
     defaultConfig {
-        minSdkVersion 14
+        minSdkVersion 26
         targetSdkVersion rootProject.targetSdkVersion
         versionCode 1
         versionName "1.0"
@@ -20,34 +21,34 @@ dependencies {
     implementation deps.androidxCompat
 }
 
-afterEvaluate {
-    publishing {
-        publications {
-            LibRelease(MavenPublication) {
-                from components.release
-                artifactId 'lovely-dialog'
-                groupId upload.groupId
-                version upload.version
-            }
-        }
-    }
-
-    bintray {
-        user = upload.user
-        key = System.getenv('BINTRAY_KEY')
-        publications = ['LibRelease']
-        configurations = ['archives']
-        pkg {
-            name = upload.uploadName
-            repo = upload.repository
-            userOrg = upload.userOrg
-            licenses = upload.licences
-            publish = true
-            dryRun = false
-            version {
-                name = upload.version
-                desc = upload.description
-            }
-        }
-    }
-}
+//afterEvaluate {
+//    publishing {
+//        publications {
+//            LibRelease(MavenPublication) {
+//                from components.release
+//                artifactId 'lovely-dialog'
+//                groupId upload.groupId
+//                version upload.version
+//            }
+//        }
+//    }
+//
+//    bintray {
+//        user = upload.user
+//        key = System.getenv('BINTRAY_KEY')
+//        publications = ['LibRelease']
+//        configurations = ['archives']
+//        pkg {
+//            name = upload.uploadName
+//            repo = upload.repository
+//            userOrg = upload.userOrg
+//            licenses = upload.licences
+//            publish = true
+//            dryRun = false
+//            version {
+//                name = upload.version
+//                desc = upload.description
+//            }
+//        }
+//    }
+//}

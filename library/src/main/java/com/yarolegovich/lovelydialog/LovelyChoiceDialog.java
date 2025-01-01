@@ -1,10 +1,7 @@
 package com.yarolegovich.lovelydialog;
 
-import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
-import androidx.annotation.StringRes;
 import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,7 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-
+import androidx.annotation.StringRes;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
